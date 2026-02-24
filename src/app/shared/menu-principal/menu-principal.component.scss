@@ -1,0 +1,81 @@
+.menu-nav-wrapper {
+  max-width: 1200px;
+  margin: 0px auto;
+  position: relative;
+
+  background-image: url('/images/moldura-dourada.webp');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  padding: 0; // 🔥 importante agora fica 0
+}
+
+/* 🔥 Área interna real */
+.menu-inner {
+   padding: 0px 120px; // ajuste fino aqui
+   padding-top: 160px;
+   padding-bottom: 70px;
+
+}
+
+/* Linha superior */
+.menu-top {
+  display: flex;
+  align-items: center;
+  gap: 10px; // substitui space-between
+}
+
+/* Faz o menu ir para a direita sem estourar */
+ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin-left: 20px; 
+  padding: 0;
+}
+
+/* Logo */
+.logo {
+  height: 100px;
+  margin-left: 70px;
+}
+
+/* Título */
+h1 {
+  font-size: 2.4rem;
+  color: #d4af37;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Botões */
+li {
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: 0.3s;
+
+  &.destaque {
+    background: #d4af37;
+    color: #1a1a2e;
+    font-weight: bold;
+  }
+
+  &:hover {
+    background: #b9985c;
+    color: #1a1a2e;
+  }
+}
+
+/* Imagem inferior */
+.menu-bottom {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.menu-bottom img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
