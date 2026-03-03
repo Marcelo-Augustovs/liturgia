@@ -1,0 +1,28 @@
+<div class="side-menu">
+
+    <!-- Botões dinâmicos -->
+    <div class="menu-items">
+        <button 
+            class="navButton"
+            *ngFor="let item of navList"
+            (click)="selectItem(item)">
+            {{item.navButton}}
+        </button>
+    </div>
+
+    <!-- Parte inferior fixa -->
+    <div class="menu-footer">
+        
+        <button class="footer-btn" routerLink="/">
+            Página Inicial
+        </button>
+
+        <button class="footer-btn" routerLink="/outra-pagina">
+            Página Relacionada
+        </button>
+
+        <img src="/images/brasao-paroquia.webp" alt="brasao da paroquia">
+
+    </div>
+
+</div>

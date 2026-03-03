@@ -1,0 +1,10 @@
+<div class="background-menu" >
+   <div class="cards-container">
+      <app-card *ngFor="let card of cardList"
+         [title]="card.title"
+         [imageCardName]="card.imageName"
+         [description]="card.description"
+         [linkPage]="card.linkPage"
+      ></app-card>
+   </div>
+</div>
