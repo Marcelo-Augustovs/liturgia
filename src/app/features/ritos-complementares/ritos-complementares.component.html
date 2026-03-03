@@ -1,0 +1,61 @@
+<div class="layout-countainer"> 
+    <app-side-menu
+        [navList]="menuList"
+        (contentSelected)="onContentSelected($event)">
+    </app-side-menu>
+
+    <div class="content-area">
+
+        <div *ngIf="selectedItem">
+
+            <!-- Se tiver mais de um conteúdo -->
+            <div *ngIf="selectedItem.navContent.length > 1" class="sub-selector">
+
+                <button 
+                    *ngFor="let content of selectedItem.navContent; let i = index"
+                    (click)="selectedContentIndex = i"
+                    [class.active]="selectedContentIndex === i"
+                >
+                    {{ content.menuTitle }}
+                </button>
+
+            </div>
+
+            <!-- Exibe apenas o conteúdo selecionado -->
+            <div *ngIf="selectedItem.navContent.length > 0">
+
+                <h2>
+                    {{ selectedItem.navContent[selectedContentIndex].menuTitle }}
+                </h2>
+
+                <div class="columns">
+
+                    <div class="left">
+                        <h3>
+                            {{ selectedItem.navContent[selectedContentIndex].leftSubTitle }}
+                        </h3>
+
+                        <p *ngFor="let text of selectedItem.navContent[selectedContentIndex].leftContent">
+                            {{ text }}
+                        </p>
+                    </div>
+
+                    <div class="right">
+                        <h3>
+                            {{ selectedItem.navContent[selectedContentIndex].rightSubTitle }}
+                        </h3>
+
+                        <p *ngFor="let text of selectedItem.navContent[selectedContentIndex].rightContent">
+                            {{ text }}
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+        
+</div>
