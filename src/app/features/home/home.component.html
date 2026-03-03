@@ -5,7 +5,10 @@
             <span>Um só coração uma só alma</span>
     </p>
 </div>
-<app-menu-option></app-menu-option>
+<app-menu-option
+  [cardList]="cardList"
+></app-menu-option>
+
 <footer class="footer">
   <div class="footer-top-frame"></div>
   <div class="footer-container">
@@ -14,7 +17,7 @@
     <div class="footer-brand">
       <div class="brand-content">
         <img src="/images/brasao-paroquia.webp" alt="brasão da paroquia">
-        <h2>Paroquia nossa senhora de Fátima olaria</h2>
+        <h2>Paroquia Nossa Senhora de Fátima Olaria</h2>
       </div>
     </div>
 
@@ -32,9 +35,8 @@
     <!-- Coluna 3 - Contato -->
     <div class="footer-contact">
       <h3>Contato</h3>
-      <p>📞 +55 (31) 91234-5678</p>
-      <p>✉ contatosuaiturgia.com.br</p>
-      <p>📍 R. Santo Espírito, 123<br> Belo Horizonte - MG</p>
+      <p>📞 (21) 99118-9166</p>
+      <p>📍 Avenida Darcy Bittencourt Costa, 150<br> Olaria - RJ</p>
 
       <div class="social">
         <i class="fab fa-instagram"></i>
@@ -43,6 +45,5 @@
         <i class="fab fa-twitter"></i>
       </div>
     </div>
-
   </div>
 </footer>
