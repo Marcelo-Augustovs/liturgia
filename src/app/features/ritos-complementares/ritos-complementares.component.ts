@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { SideMenuComponent } from "../../shared/components/side-menu/side-menu.component";
 import { sideMenu } from '../../shared/models/side-menu.model';
 import { CommonModule } from '@angular/common';
+import { BATISMO_DATA } from '../../shared/data/batismo.data';
+import { BATISMO_CONTENT } from '../../shared/data/batismo.content';
+import { MATRIMONIO_CONTENT } from '../../shared/data/matrimonio.content';
 
 @Component({
   selector: 'app-ritos-complementares',
@@ -14,46 +17,18 @@ export class RitosComplementaresComponent {
  
   selectedItem!: sideMenu;
   selectedContentIndex = 0;
+  selectedRiteIndex: number = 0;
 
   menuList: sideMenu[] = [
     { navButton: 'Batismo',
       refContent: 'batismo',
-      navContent: [ 
-        { menuTitle: 'Batismo Adulto',
-        leftSubTitle: 'Organizar e Preparar',
-        rightSubTitle: 'Rito',
-        leftContent: [
-          'Irmãos e irmãs...',
-          'Deus nos acolhe...'
-        ],
-        rightContent: [
-          'Amém.',
-          'Graças a Deus.'
-        ]
-      }, 
-      { menuTitle: 'Batismo crianças',
-        leftSubTitle: 'Organizar e Preparar',
-        rightSubTitle: 'Rito',
-        leftContent: [
-          'preparar a Lembraça do batismo',
-          'verificar e orientar os padrinhos escolhidos',
-          'separa uma vela',
-          'ritual do batismo',
-          '...'
-        ],
-        rightContent: [
-          'Pode ser feito dentro da missa ou fora da missa',
-          'depois da homilia, segue sé o rito'
-        ]
-      }
-
-    ]
+      navContent: BATISMO_CONTENT
       
     },
     {
       navButton: 'Matrimonio',
       refContent: 'matrimonio',
-      navContent: []
+      navContent: MATRIMONIO_CONTENT
     },
     {
       navButton: 'Comunhão fora da missa',

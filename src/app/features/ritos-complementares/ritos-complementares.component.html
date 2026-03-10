@@ -31,23 +31,55 @@
                 <div class="columns">
 
                     <div class="left">
-                        <h3>
-                            {{ selectedItem.navContent[selectedContentIndex].leftSubTitle }}
-                        </h3>
+                        <div *ngFor="let topic of selectedItem.navContent       [selectedContentIndex].leftContent">
 
-                        <p *ngFor="let text of selectedItem.navContent[selectedContentIndex].leftContent">
-                            {{ text }}
-                        </p>
+                            <h4 *ngIf="topic.title">
+                                {{ topic.title }}
+                            </h4>
+
+                            <ul>
+                                <li *ngFor="let item of topic.items">
+                                {{ item }}
+                                </li>
+                            </ul>
+
+                        </div>
                     </div>
 
                     <div class="right">
-                        <h3>
-                            {{ selectedItem.navContent[selectedContentIndex].rightSubTitle }}
-                        </h3>
+                         <div class="rite-tabs" *ngIf="selectedItem.navContent[selectedContentIndex].rightContent.length > 1">
 
-                        <p *ngFor="let text of selectedItem.navContent[selectedContentIndex].rightContent">
-                            {{ text }}
-                        </p>
+                        <button
+                            *ngFor="let rite of selectedItem.navContent[selectedContentIndex].rightContent; let i = index"
+                            (click)="selectedRiteIndex = i"
+                            [class.active]="selectedRiteIndex === i">
+
+                            {{ rite.variationTitle }}
+
+                        </button>
+
+                    </div>
+                       
+                        <ng-container *ngIf="selectedItem.navContent[selectedContentIndex].rightContent[selectedRiteIndex] as rite">
+
+                            <div *ngFor="let section of rite.sections">
+
+                                <h4 *ngIf="section.title">
+                                    {{ section.title }}
+                                </h4>
+
+                                <h5 *ngIf="section.subTitle">
+                                    {{ section.subTitle }}
+                                </h5>
+
+                                <p *ngFor="let text of section.texts">
+                                    {{ text }}
+                                </p>
+
+                            </div>
+
+                        </ng-container>
+
                     </div>
 
                 </div>
