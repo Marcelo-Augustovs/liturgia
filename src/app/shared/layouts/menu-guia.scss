@@ -88,6 +88,67 @@
   background: #ffffff;
 }
 
+.left ul{
+  padding-left: 20px;
+  margin-bottom: 18px;
+}
+
+.left li{
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.left h4{
+  margin-top: 10px;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #4b2e83;
+}
+
+.right h3{
+  margin-top: 20px;
+  color: #4b2e83;
+}
+
+.right h4{
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+.right h5{
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.right p{
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.rite-tabs{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.rite-tabs button{
+
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+
+  background: #e2e2e2;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.rite-tabs button.active{
+
+  background: #5b3fa3;
+  color: white;
+}
+
 @media (max-width: 900px) {
   .columns {
     grid-template-columns: 1fr;
